@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Walter Rhomberg | Bishop CISD School Marshal</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+font-family:Arial,sans-serif;background:radial-gradient(circle at top,#123d20,#07120b 70%);color:#fff}
+.wrap{width:min(94vw,520px);text-align:center;padding:24px 14px}
+.card{width:100%;height:auto;border-radius:22px;box-shadow:0 12px 35px #0009}
+.controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+button,a{border:2px solid #d7b33f;background:#0c2e17;color:#fff;padding:12px 18px;border-radius:12px;
+font-weight:700;text-decoration:none;font-size:16px}
+p{opacity:.85;line-height:1.4}
+</style>
+</head>
+<body>
+<div class="wrap">
+<img id="card" class="card" src="walter-rhomberg-front.png" alt="Walter Rhomberg School Marshal collectible card">
+<div class="controls">
+<button id="toggle" type="button">Show Hornslaught</button>
+<a id="save" href="walter-rhomberg-front.png" download>Save Card</a>
+</div>
+<p>Tap the button to switch between the School Marshal face card and Hornslaught.</p>
+</div>
+<script>
+const card=document.getElementById('card');
+const toggle=document.getElementById('toggle');
+const save=document.getElementById('save');
+let showingBack=false;
+toggle.addEventListener('click',()=>{
+  showingBack=!showingBack;
+  card.src=showingBack?'hornslaught.png':'walter-rhomberg-front.png';
+  card.alt=showingBack?'Hornslaught collectible card':'Walter Rhomberg School Marshal collectible card';
+  save.href=card.src;
+  toggle.textContent=showingBack?'Show Walter Rhomberg':'Show Hornslaught';
+});
+</script>
+</body>
+</html>
